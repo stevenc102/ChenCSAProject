@@ -1,6 +1,8 @@
 public class Room {
     private Enemy[] enemyList;
+
     private int roomDifficulty;
+    private Enemy[] roomEnemies;
     public Room(int roomDifficulty) {
         this.roomDifficulty = roomDifficulty;
         Enemy ogre = new Enemy("Ogre", (int)(roomDifficulty * (int)(Math.random() * 10) + 1), 25, 20, 3, "Smash" ;
@@ -15,21 +17,22 @@ public class Room {
         Enemy snake = new Enemy("Giant Snake", (int)(roomDifficulty * (int)(Math.random() * 10) + 1), 15, 3, 14, "Venom");
         Enemy[] enemyList = {ogre, troll, wolf, spider, skeleton, slime, bandit, snake};
         Enemy[] bossList = {giant, dragon};
-        Enemy[] enemies = new Enemy[(int) (roomDifficulty * .69) + 1];
+        Enemy[] roomEnemies = new Enemy[(int) (roomDifficulty * .69) + 1];
+
         if (roomDifficulty == 10) {
-            enemies[0] = bossList[(int) (Math.random() * 2) + 1];
-            for (int i = 1; i < enemies.length; i++) {
-                enemies[i] = enemyList[(int) (Math.random() * 8)];
+            roomEnemies[0] = bossList[(int) (Math.random() * 2) + 1];
+            for (int i = 1; i < roomEnemies.length; i++) {
+                roomEnemies[i] = enemyList[(int) (Math.random() * 8)];
             }
         } else {
-            for (int i = 0; i < enemies.length; i++) {
-                enemies[i] = enemyList[(int) (Math.random() * 8)];
+            for (int i = 0; i < roomEnemies.length; i++) {
+                roomEnemies[i] = enemyList[(int) (Math.random() * 8)];
             }
         }
     }
 
     public Enemy[] getEnemyList() {
-        return enemyList;
+        return roomEnemies;
     }
 
 
