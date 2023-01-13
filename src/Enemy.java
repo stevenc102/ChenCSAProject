@@ -7,6 +7,8 @@ public class Enemy {
     private double speed;
     private String specialCharacteristic;
 
+    private boolean isAlive;
+
     public Enemy(String name, int level, double health, double attack, double speed, String special) {
         this.name = name;
         this.level = level;
@@ -14,6 +16,7 @@ public class Enemy {
         this.attack = attack;
         this.speed = speed;
         specialCharacteristic = special;
+        isAlive = true;
     }
 
     public double getLevel() {
@@ -27,6 +30,7 @@ public class Enemy {
     public double getAttack() {
         return level * 0.15 + attack;
     }
+    public double getSpeed() {return speed};
 
     public String getSpecial() {
         return specialCharacteristic;
@@ -34,5 +38,8 @@ public class Enemy {
 
     public String getName() {
         return name;
+    }
+    public void setIsAlive(boolean alive) {
+        isAlive = alive;
     }
 }

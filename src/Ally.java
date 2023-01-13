@@ -5,6 +5,8 @@ public class Ally {
     private double speed;
     private String classType;
     private Item heldItem;
+
+    private boolean isAlive;
     public Ally(String name, double health, double attack, double speed, String classType, Item heldItem) {
         this.name = name;
         this.health = health;
@@ -12,6 +14,7 @@ public class Ally {
         this.speed = speed;
         this.classType = classType;
         this.heldItem = heldItem;
+        isAlive = true;
     }
     public Ally(String name, double health, double attack, double speed, String classType) {
         this.name = name;
@@ -28,11 +31,11 @@ public class Ally {
         return health;
     }
 
-    public double attack() {
+    public double getAttack() {
         return attack;
     }
 
-    public double speed() {
+    public double getSpeed() {
         return speed;
     }
 
@@ -42,6 +45,13 @@ public class Ally {
 
     public void setHeldItem(Item newHeldItem) {
         heldItem = newHeldItem;
+    }
+
+    public void setIsAlive(boolean setAlive) {
+        isAlive = setAlive;
+    }
+    public void setSpeed(double newSpeed) {
+        speed = newSpeed;
     }
 }
 
