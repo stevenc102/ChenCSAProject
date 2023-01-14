@@ -26,4 +26,10 @@ public class Dungeon {
         Room[] RoomOrder = {room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12, room13, room14, room15, room16, room17, room18, room19, room20};
     }
 
+    public void beginDungeon() {
+        for (Room room: RoomOrder) {
+            Battle battle = new Battle()
+        }
+    }
+
 }

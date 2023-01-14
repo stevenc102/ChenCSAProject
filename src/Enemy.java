@@ -30,7 +30,7 @@ public class Enemy {
     public double getAttack() {
         return level * 0.15 + attack;
     }
-    public double getSpeed() {return speed};
+    public double getSpeed() {return speed;}
 
     public String getSpecial() {
         return specialCharacteristic;
@@ -39,7 +39,17 @@ public class Enemy {
     public String getName() {
         return name;
     }
+    public boolean isAlive() {
+        return isAlive;
+    }
     public void setIsAlive(boolean alive) {
         isAlive = alive;
+    }
+
+    public void takeDamage(double damage) {
+        health -= damage;
+    }
+    public void setAttack(double attack) {
+        this.attack = attack;
     }
 }
